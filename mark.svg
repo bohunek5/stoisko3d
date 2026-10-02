@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="607 269 51 57">
   <defs>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#604014"/><stop offset=".2" stop-color="#d4ad59"/>
-      <stop offset=".35" stop-color="#fae3a3"/><stop offset=".46" stop-color="#a77828"/>
-      <stop offset=".64" stop-color="#664318"/><stop offset=".79" stop-color="#d6ad59"/>
-      <stop offset="1" stop-color="#806025"/>
+    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="606" y1="266" x2="658" y2="326" spreadMethod="reflect">
+      <stop stop-color="#5e3810"/><stop offset=".14" stop-color="#99702a"/>
+      <stop offset=".30" stop-color="#d5ad59"/><stop offset=".42" stop-color="#fff3cf"/>
+      <stop offset=".49" stop-color="#c99d48"/><stop offset=".62" stop-color="#775015"/>
+      <stop offset=".78" stop-color="#e6c575"/><stop offset=".88" stop-color="#ffebae"/>
+      <stop offset="1" stop-color="#aa7a2b"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-10 -5;10 5;-10 -5" dur="14s" repeatCount="indefinite"/>
     </linearGradient>
   </defs>
   <!-- Exact D outlines from the supplied PRESCOT vector logo. -->
