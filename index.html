@@ -3,33 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#050505">
+  <meta name="theme-color" content="#f6efe2">
   <title>PRESCOT / KLUŚ · stoisko 3D</title>
   <link rel="icon" href="./mark.svg" type="image/svg+xml">
   <style>
     *{box-sizing:border-box}
-    body{margin:0;background:#050505;color:#e8d5a7;font:15px system-ui,sans-serif}
-    main{min-height:100dvh;display:grid;place-items:center;padding:42px 26px;position:relative;isolation:isolate;background:radial-gradient(ellipse at 50% 44%,#201b11 0,#100e0a 35%,#050505 76%)}
-    main::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('./entry-pattern.svg') center / 240px 240px repeat;opacity:.34;mask-image:radial-gradient(ellipse at 50% 50%,transparent 0%,#0003 24%,#000 66%);-webkit-mask-image:radial-gradient(ellipse at 50% 50%,transparent 0%,#0003 24%,#000 66%)}
-    form{width:min(410px,100%);position:relative;text-align:center}
-    .mark{width:112px;height:125px;opacity:.94;margin-bottom:28px;filter:drop-shadow(0 12px 25px #ad783015)}
+    body{margin:0;background:#f6efe2;color:#283035;font:15px system-ui,sans-serif}
+    main{min-height:100dvh;display:grid;place-items:center;padding:40px 24px;position:relative;isolation:isolate;background:radial-gradient(ellipse at 50% 40%,#fffdf7 0,#f7f0e3 48%,#efe3ce 100%)}
+    main::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('./entry-pattern.svg') center / 240px 240px repeat;opacity:.38;mask-image:radial-gradient(ellipse at 50% 50%,transparent 0%,#0003 24%,#000 66%);-webkit-mask-image:radial-gradient(ellipse at 50% 50%,transparent 0%,#0003 24%,#000 66%)}
+    form{width:min(480px,100%);position:relative;text-align:center;padding:34px 32px 20px;border:1px solid #b6985c88;border-radius:18px;background:#fffaf0dc;box-shadow:0 24px 80px #96733817,inset 0 0 0 4px #fffdf77a}
+    .mark{width:112px;height:125px;opacity:.94;margin-bottom:24px;filter:drop-shadow(0 12px 25px #ad783015)}
     .entry-brands{display:flex;align-items:center;justify-content:center;gap:26px;margin:0 0 29px}
     .entry-brands img{display:block;object-fit:contain;flex-shrink:0}
     .prescot-logo{width:176px;height:auto}
     .klus-logo{width:158px;height:auto}
     .brand-divider{width:1px;height:32px;background:linear-gradient(transparent,#b898555e,transparent);flex-shrink:0}
     h1{font-size:34px;font-weight:400;letter-spacing:-1px;margin:0 0 12px}
-    p{color:#b6ae9d;font-size:13px;line-height:1.7;margin:0 0 32px}
-    label{display:block;text-align:left;font-size:11px;color:#d6cbb6;margin:0 0 9px}
-    input{width:100%;padding:16px;border:1px solid #655431;border-radius:7px;background:#10100ee8;color:#f6e6bd;font:16px system-ui;outline:none;transition:border-color .2s,box-shadow .2s}
-    input:focus{border-color:#d5b878;box-shadow:0 0 0 3px #d5b8781a}
-    button{width:100%;margin-top:12px;padding:16px;border:1px solid #e9cb8652;border-radius:7px;background:linear-gradient(115deg,#b88e48,#e0c486 47%,#c7a057);color:#17140e;font:600 13px system-ui;cursor:pointer;box-shadow:0 6px 28px #b5801c10}
+    p{color:#6c685e;font-size:13px;line-height:1.7;margin:0 0 32px}
+    label{display:block;text-align:left;font-size:11px;color:#5a5344;margin:0 0 9px}
+    input{width:100%;padding:16px;border:1px solid #b5934e;border-radius:7px;background:#fffdf7;color:#263036;font:16px system-ui;outline:none;transition:border-color .2s,box-shadow .2s}
+    input:focus{border-color:#98752c;box-shadow:0 0 0 3px #b99b5029}
+    button{width:100%;margin-top:12px;padding:16px;border:1px solid #ab8543;border-radius:7px;background:linear-gradient(115deg,#b88e48,#e0c486 47%,#c7a057);color:#17140e;font:600 13px system-ui;cursor:pointer;box-shadow:0 6px 28px #b5801c10}
     button:hover{filter:brightness(1.08)}button:focus-visible{outline:2px solid #f4dfad;outline-offset:4px}button:disabled{opacity:.65;cursor:wait}
-    #status{min-height:38px;margin-top:18px;font-size:12px;color:#d5cbb9;line-height:1.7}
+    #status{min-height:38px;margin-top:18px;font-size:12px;color:#655537;line-height:1.7}
     iframe{display:block;width:100vw;height:100dvh;border:0;position:fixed;inset:0;background:#f4f1e9}
     [hidden]{display:none!important}
-    @media(max-width:540px){main{padding:32px 24px}main::before{background-size:190px 190px;opacity:.30}.mark{width:91px;height:102px;margin-bottom:27px}.entry-brands{gap:17px;margin-bottom:27px}.prescot-logo{width:154px}.klus-logo{width:136px}.brand-divider{height:28px}h1{font-size:31px}p{font-size:12px;margin-bottom:28px}}
-    @media(max-width:365px){main{padding-inline:20px}.entry-brands{gap:13px}.prescot-logo{width:134px}.klus-logo{width:116px}}
+    @media(max-width:540px){main{padding:24px 20px}form{padding:26px 20px 12px}main::before{background-size:190px 190px;opacity:.30}.mark{width:91px;height:102px;margin-bottom:27px}.entry-brands{gap:13px;margin-bottom:27px}.prescot-logo{width:134px}.klus-logo{width:116px}.brand-divider{height:28px}h1{font-size:31px}p{font-size:12px;margin-bottom:28px}}
+    @media(max-width:365px){main{padding-inline:16px}form{padding-inline:16px}.entry-brands{gap:12px}.prescot-logo{width:114px}.klus-logo{width:104px}}
   </style>
 </head>
 <body>
@@ -45,7 +45,7 @@
       <p>Wirtualny spacer, światło i materiały targowe.</p>
       <label for="password">Hasło dostępu</label>
       <input id="password" type="password" autocomplete="current-password" required>
-      <button id="submit">Otwórz pokaz →</button>
+      <button id="submit">Otwórz stoisko →</button>
       <div id="status" role="status" aria-live="polite"></div>
     </form>
   </main>

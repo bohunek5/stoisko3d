@@ -1,5 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#826330"/><stop offset=".45" stop-color="#dbc081"/><stop offset="1" stop-color="#997132"/></linearGradient>
-<path id="d" fill-rule="evenodd" d="M0 0H18.3C35.3 0 47.9 9 47.9 27C47.9 45.1 35.4 54 18.3 54H0Z M12.6 10.5V43.3H19C29 43.3 35 37 35 27C35 16.8 29.3 10.5 19 10.5Z"/></defs>
-<g fill="url(#g)"><use href="#d" transform="translate(27 27) rotate(-20 24 27)" opacity=".70"/><use href="#d" transform="translate(147 147) rotate(-20 24 27)" opacity=".48"/></g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240"><defs>
+    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="606" y1="266" x2="658" y2="326" spreadMethod="reflect">
+      <stop stop-color="#5e3810" /><stop offset=".14" stop-color="#99702a" />
+      <stop offset=".30" stop-color="#d5ad59" /><stop offset=".42" stop-color="#fff3cf" />
+      <stop offset=".49" stop-color="#c99d48" /><stop offset=".62" stop-color="#775015" />
+      <stop offset=".78" stop-color="#e6c575" /><stop offset=".88" stop-color="#ffebae" />
+      <stop offset="1" stop-color="#aa7a2b" />
+      <animateTransform attributeName="gradientTransform" type="translate" values="-10 -5;10 5;-10 -5" dur="14s" repeatCount="indefinite" />
+    </linearGradient>
+  <symbol id="prescot-mark" viewBox="607 269 51 57"><g fill="url(#gold)">
+    <rect x="608.6" y="291.7" width="17.2" height="10.1" />
+    <path d="M626.9,270.6h-18.3v10.5h12.6h6.4c10.3,0,16,6.3,16,16.5c0,10-6,16.3-16,16.3h-6.4h-12.6v10.7h18.3c17.1,0,29.6-8.9,29.6-27C656.5,279.6,643.9,270.6,626.9,270.6z" />
+  </g>
+</symbol></defs>
+  
+  <use href="#prescot-mark" x="27" y="27" width="51" height="57" opacity=".70" transform="rotate(-20 52.5 55.5)" /><use href="#prescot-mark" x="147" y="147" width="51" height="57" opacity=".48" transform="rotate(-20 172.5 175.5)" /></svg>
