@@ -1,1 +1,55 @@
-<!doctype html><html lang="pl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050505"><title>PRESCOT / KLUŚ · stoisko 3D</title><link rel="icon" href="./mark.svg" type="image/svg+xml"><style>*{box-sizing:border-box}body{margin:0;background:#050505;color:#e8d5a7;font:15px system-ui,sans-serif}main{min-height:100dvh;display:grid;place-items:center;padding:26px;background:radial-gradient(ellipse at center,#1a1710,#050505 66%)}form{width:min(390px,100%);position:relative;text-align:center}.mark{width:130px;height:145px;opacity:.85;margin-bottom:30px}small{font-size:10px;letter-spacing:5px;color:#ba9b60}h1{font-size:32px;font-weight:400;letter-spacing:-1px;margin:16px 0 10px}p{color:#a9a291;font-size:13px;line-height:1.7;margin-bottom:35px}label{display:block;text-align:left;font-size:11px;color:#c8bfae;margin:0 0 9px}input{width:100%;padding:16px;border:1px solid #514731;border-radius:6px;background:#11110f;color:#f6e6bd;font:16px system-ui;outline:none}input:focus{border-color:#d5b878;box-shadow:0 0 0 3px #d5b8781a}button{width:100%;margin-top:12px;padding:16px;border:0;border-radius:6px;background:#d4b16d;color:#17140e;font:600 13px system-ui;cursor:pointer}button:disabled{opacity:.65;cursor:wait}#status{min-height:38px;margin-top:18px;font-size:12px;color:#d5cbb9;line-height:1.7}iframe{display:block;width:100vw;height:100dvh;border:0;position:fixed;inset:0;background:#f4f1e9}[hidden]{display:none!important}</style><main id="gate"><form id="unlock"><img class="mark" src="./mark.svg" alt="PRESCOT"><div><small>PRESCOT / KLUŚ</small><h1>Wejdź na stoisko.</h1><p>Wirtualny spacer, światło i materiały targowe.</p></div><label for="password">Hasło dostępu</label><input id="password" type="password" autocomplete="current-password" required autofocus><button id="submit">Otwórz pokaz →</button><div id="status" role="status" aria-live="polite"></div></form></main><iframe id="show" title="Interaktywne stoisko PRESCOT / KLUŚ" allow="autoplay; fullscreen" hidden></iframe><script type="module" src="./unlock.js"></script></html>
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>PRESCOT / KLUŚ · stoisko 3D</title>
+  <link rel="icon" href="./mark.svg" type="image/svg+xml">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#050505;color:#e8d5a7;font:15px system-ui,sans-serif}
+    main{min-height:100dvh;display:grid;place-items:center;padding:42px 26px;position:relative;isolation:isolate;background:radial-gradient(ellipse at 50% 44%,#201b11 0,#100e0a 35%,#050505 76%)}
+    main::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('./entry-pattern.svg') center / 240px 240px repeat;opacity:.34;mask-image:radial-gradient(ellipse at 50% 50%,transparent 0%,#0003 24%,#000 66%);-webkit-mask-image:radial-gradient(ellipse at 50% 50%,transparent 0%,#0003 24%,#000 66%)}
+    form{width:min(410px,100%);position:relative;text-align:center}
+    .mark{width:112px;height:125px;opacity:.94;margin-bottom:28px;filter:drop-shadow(0 12px 25px #ad783015)}
+    .entry-brands{display:flex;align-items:center;justify-content:center;gap:26px;margin:0 0 29px}
+    .entry-brands img{display:block;object-fit:contain;flex-shrink:0}
+    .prescot-logo{width:176px;height:auto}
+    .klus-logo{width:158px;height:auto}
+    .brand-divider{width:1px;height:32px;background:linear-gradient(transparent,#b898555e,transparent);flex-shrink:0}
+    h1{font-size:34px;font-weight:400;letter-spacing:-1px;margin:0 0 12px}
+    p{color:#b6ae9d;font-size:13px;line-height:1.7;margin:0 0 32px}
+    label{display:block;text-align:left;font-size:11px;color:#d6cbb6;margin:0 0 9px}
+    input{width:100%;padding:16px;border:1px solid #655431;border-radius:7px;background:#10100ee8;color:#f6e6bd;font:16px system-ui;outline:none;transition:border-color .2s,box-shadow .2s}
+    input:focus{border-color:#d5b878;box-shadow:0 0 0 3px #d5b8781a}
+    button{width:100%;margin-top:12px;padding:16px;border:1px solid #e9cb8652;border-radius:7px;background:linear-gradient(115deg,#b88e48,#e0c486 47%,#c7a057);color:#17140e;font:600 13px system-ui;cursor:pointer;box-shadow:0 6px 28px #b5801c10}
+    button:hover{filter:brightness(1.08)}button:focus-visible{outline:2px solid #f4dfad;outline-offset:4px}button:disabled{opacity:.65;cursor:wait}
+    #status{min-height:38px;margin-top:18px;font-size:12px;color:#d5cbb9;line-height:1.7}
+    iframe{display:block;width:100vw;height:100dvh;border:0;position:fixed;inset:0;background:#f4f1e9}
+    [hidden]{display:none!important}
+    @media(max-width:540px){main{padding:32px 24px}main::before{background-size:190px 190px;opacity:.30}.mark{width:91px;height:102px;margin-bottom:27px}.entry-brands{gap:17px;margin-bottom:27px}.prescot-logo{width:154px}.klus-logo{width:136px}.brand-divider{height:28px}h1{font-size:31px}p{font-size:12px;margin-bottom:28px}}
+    @media(max-width:365px){main{padding-inline:20px}.entry-brands{gap:13px}.prescot-logo{width:134px}.klus-logo{width:116px}}
+  </style>
+</head>
+<body>
+  <main id="gate">
+    <form id="unlock">
+      <img class="mark" src="./mark.svg" alt="" aria-hidden="true">
+      <div class="entry-brands" aria-label="PRESCOT LED i KLUŚ">
+        <img class="prescot-logo" src="./prescot-logo.svg" alt="PRESCOT LED" width="471" height="56">
+        <span class="brand-divider" aria-hidden="true"></span>
+        <img class="klus-logo" src="./klus-logo.svg" alt="KLUŚ Inspiring Solutions" width="2371" height="650">
+      </div>
+      <h1>Wejdź na stoisko.</h1>
+      <p>Wirtualny spacer, światło i materiały targowe.</p>
+      <label for="password">Hasło dostępu</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+      <button id="submit">Otwórz pokaz →</button>
+      <div id="status" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+  <iframe id="show" title="Interaktywne stoisko PRESCOT / KLUŚ" allow="autoplay; fullscreen" hidden></iframe>
+  <script type="module" src="./unlock.js"></script>
+</body>
+</html>
