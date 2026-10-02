@@ -1,16 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240"><defs>
-    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="606" y1="266" x2="658" y2="326" spreadMethod="reflect">
-      <stop stop-color="#5e3810" /><stop offset=".14" stop-color="#99702a" />
-      <stop offset=".30" stop-color="#d5ad59" /><stop offset=".42" stop-color="#fff3cf" />
-      <stop offset=".49" stop-color="#c99d48" /><stop offset=".62" stop-color="#775015" />
-      <stop offset=".78" stop-color="#e6c575" /><stop offset=".88" stop-color="#ffebae" />
-      <stop offset="1" stop-color="#aa7a2b" />
-      <animateTransform attributeName="gradientTransform" type="translate" values="-10 -5;10 5;-10 -5" dur="14s" repeatCount="indefinite" />
-    </linearGradient>
-  <symbol id="prescot-mark" viewBox="607 269 51 57"><g fill="url(#gold)">
-    <rect x="608.6" y="291.7" width="17.2" height="10.1" />
-    <path d="M626.9,270.6h-18.3v10.5h12.6h6.4c10.3,0,16,6.3,16,16.5c0,10-6,16.3-16,16.3h-6.4h-12.6v10.7h18.3c17.1,0,29.6-8.9,29.6-27C656.5,279.6,643.9,270.6,626.9,270.6z" />
-  </g>
-</symbol></defs>
-  
-  <use href="#prescot-mark" x="27" y="27" width="51" height="57" opacity=".70" transform="rotate(-20 52.5 55.5)" /><use href="#prescot-mark" x="147" y="147" width="51" height="57" opacity=".48" transform="rotate(-20 172.5 175.5)" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240"><defs><linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="842" y2="595" spreadMethod="reflect"><stop offset="0" stop-color="#755019" /><stop offset=".2" stop-color="#c69a47" /><stop offset=".42" stop-color="#fff0bd" /><stop offset=".54" stop-color="#bf9340" /><stop offset=".72" stop-color="#876024" /><stop offset=".89" stop-color="#efd28b" /><stop offset="1" stop-color="#b18336" /><animateTransform attributeName="gradientTransform" type="translate" values="-140 -70;140 70;-140 -70" dur="14s" repeatCount="indefinite" /></linearGradient><symbol id="prescot-pattern-complete" viewBox="0 0 841.9 595.3"><g>
+	<rect x="339" y="233.5" fill="url(#gold)" width="174.2" height="102.8" />
+	<path fill="url(#gold)" d="M524.7,19.5H339v106.4h127.8h65.1c104,0,162.7,64.3,162.7,167.5c0,101.6-61.1,165.1-162.7,165.1h-65.1H339   v108.7h185.7c173,0,300-90.5,300-273.8C824.8,110.8,697,19.5,524.7,19.5z" />
+	<rect x="21.8" y="458.5" fill="url(#gold)" width="226.7" height="108.7" />
+	<rect x="21.8" y="233.9" fill="url(#gold)" width="207.5" height="102.4" />
+	<rect x="21.8" y="19.5" fill="url(#gold)" width="226.7" height="106.4" />
+</g>
+</symbol></defs><use href="#prescot-pattern-complete" x="22" y="27" width="78" height="55.15" opacity=".70" transform="rotate(-20 61 54.575)" /><use href="#prescot-pattern-complete" x="142" y="147" width="78" height="55.15" opacity=".48" transform="rotate(-20 181 174.575)" /></svg>
