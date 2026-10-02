@@ -9,9 +9,6 @@
       <animateTransform attributeName="gradientTransform" type="translate" values="-10 -5;10 5;-10 -5" dur="14s" repeatCount="indefinite"/>
     </linearGradient>
   </defs>
-  <!-- Exact D outlines from the supplied PRESCOT vector logo. -->
-  <g fill="url(#gold)">
-    <rect x="608.6" y="291.7" width="17.2" height="10.1"/>
-    <path d="M626.9,270.6h-18.3v10.5h12.6h6.4c10.3,0,16,6.3,16,16.5c0,10-6,16.3-16,16.3h-6.4h-12.6v10.7h18.3c17.1,0,29.6-8.9,29.6-27C656.5,279.6,643.9,270.6,626.9,270.6z"/>
-  </g>
+  <!-- Complete standalone D for the entrance screen. Booth wordmark remains original. -->
+  <path fill="url(#gold)" fill-rule="evenodd" d="M608.6 270.6H626.9C643.9 270.6 656.5 279.6 656.5 297.6C656.5 315.7 644 324.6 626.9 324.6H608.6Z M621.2 281.1V313.9H627.6C637.6 313.9 643.6 307.6 643.6 297.6C643.6 287.4 637.9 281.1 627.6 281.1Z"/>
 </svg>
