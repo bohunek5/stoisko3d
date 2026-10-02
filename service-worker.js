@@ -1,7 +1,32 @@
-let key=null,manifest=null;const decrypted=new Map(),waiting=[];const base=new URL('./',self.location.href),appBase=new URL('app/',base).pathname;
+let key=null,manifest=null,recovering=null;const decrypted=new Map(),waiting=new Set();const base=new URL('./',self.location.href),appBase=new URL('app/',base).pathname;
 self.addEventListener('install',()=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
-self.addEventListener('message',e=>{if(e.data?.type!=='UNLOCK')return;key=e.data.key;manifest=e.data.manifest;decrypted.clear();for(const resolve of waiting.splice(0))resolve();e.ports[0]?.postMessage({ok:true});});
-async function ensureKey(){if(key&&manifest)return;const clients=await self.clients.matchAll({type:'window',includeUncontrolled:true});for(const client of clients)client.postMessage({type:'KEY_NEEDED'});await Promise.race([new Promise(resolve=>waiting.push(resolve)),new Promise(resolve=>setTimeout(resolve,2000))]);}
+self.addEventListener('message',e=>{
+ if(e.data?.type==='CLAIM'){e.waitUntil(self.clients.claim());return;}
+ if(e.data?.type!=='UNLOCK')return;
+ e.waitUntil((async()=>{
+  try{
+   const nextKey=e.data.keyBytes?await crypto.subtle.importKey('raw',e.data.keyBytes,{name:'AES-GCM'},false,['decrypt']):e.data.key;
+   if(!nextKey||!e.data.manifest?.files)throw Error('invalid unlock');
+   key=nextKey;manifest=e.data.manifest;decrypted.clear();
+   for(const resolve of waiting)resolve();waiting.clear();
+   e.ports[0]?.postMessage({ok:true});
+  }catch{e.ports[0]?.postMessage({ok:false});}
+ })());
+});
+async function ensureKey(){
+ if(key&&manifest)return;
+ if(!recovering)recovering=(async()=>{
+  let finish;
+  const restored=new Promise(resolve=>{finish=resolve;waiting.add(resolve);});
+  const timer=setTimeout(finish,8000);
+  try{
+   const clients=await self.clients.matchAll({type:'window',includeUncontrolled:true});
+   for(const client of clients)client.postMessage({type:'KEY_NEEDED'});
+   if(!key||!manifest)await restored;
+  }finally{clearTimeout(timer);waiting.delete(finish);}
+ })().finally(()=>{recovering=null;});
+ return recovering;
+}
 async function fileBytes(path,entry){
  if(!decrypted.has(path))decrypted.set(path,(async()=>{const response=await fetch(new URL('vault/'+entry.file,base));if(!response.ok)throw Error('missing encrypted file');const raw=new Uint8Array(await response.arrayBuffer());let bytes=await crypto.subtle.decrypt({name:'AES-GCM',iv:raw.slice(0,12),additionalData:new TextEncoder().encode(path)},key,raw.slice(12));if(entry.gzip)bytes=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();return bytes;})().catch(e=>{decrypted.delete(path);throw e;}));return decrypted.get(path);
 }
