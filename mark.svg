@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="607 269 51 57">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#604014"/><stop offset=".2" stop-color="#d4ad59"/>
+      <stop offset=".35" stop-color="#fae3a3"/><stop offset=".46" stop-color="#a77828"/>
+      <stop offset=".64" stop-color="#664318"/><stop offset=".79" stop-color="#d6ad59"/>
+      <stop offset="1" stop-color="#806025"/>
+    </linearGradient>
+  </defs>
+  <!-- Exact D outlines from the supplied PRESCOT vector logo. -->
+  <g fill="url(#gold)">
+    <rect x="608.6" y="291.7" width="17.2" height="10.1"/>
+    <path d="M626.9,270.6h-18.3v10.5h12.6h6.4c10.3,0,16,6.3,16,16.5c0,10-6,16.3-16,16.3h-6.4h-12.6v10.7h18.3c17.1,0,29.6-8.9,29.6-27C656.5,279.6,643.9,270.6,626.9,270.6z"/>
+  </g>
+</svg>
